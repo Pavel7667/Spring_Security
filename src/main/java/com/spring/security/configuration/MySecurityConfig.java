@@ -1,4 +1,4 @@
-package com.spring.security;
+package com.spring.security.configuration;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,16 +22,16 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         UserBuilder userBuilder = User.withDefaultPasswordEncoder();
         auth.inMemoryAuthentication()
                 .withUser(userBuilder
-                        .username("ONE")
-                        .password("ONE").
-                        roles("levelAccessesOne"))
+                        .username("John1")
+                        .password("John1").
+                        roles("employee"))
                 .withUser(userBuilder
-                        .username("TWO")
-                        .password("TWO").
-                        roles("levelAccessesTwo"))
+                        .username("Kate2")
+                        .password("Kate2").
+                        roles("HR"))
                 .withUser(userBuilder
-                        .username("Both")
-                        .password("Both").
-                        roles("levelAccessesOne","levelAccessesTwo"));
+                        .username("Jack4")
+                        .password("Jac4").
+                        roles("employee","HR"));
     }
 }
